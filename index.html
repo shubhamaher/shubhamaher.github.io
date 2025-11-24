@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,10 +89,23 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            25% { transform: translateY(-30px) translateX(30px); }
-            50% { transform: translateY(-60px) translateX(-20px); }
-            75% { transform: translateY(-30px) translateX(-30px); }
+
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+            }
+
+            25% {
+                transform: translateY(-30px) translateX(30px);
+            }
+
+            50% {
+                transform: translateY(-60px) translateX(-20px);
+            }
+
+            75% {
+                transform: translateY(-30px) translateX(-30px);
+            }
         }
 
         /* Header */
@@ -113,8 +127,15 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         h1 {
@@ -245,7 +266,8 @@
             color: var(--color-accent-blue);
         }
 
-        .card p, .card ul {
+        .card p,
+        .card ul {
             color: var(--color-text-secondary);
             line-height: 1.8;
         }
@@ -282,8 +304,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         /* Timeline */
@@ -462,17 +491,42 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            .subtitle { font-size: 1.2rem; }
-            .timeline::before { left: 20px; }
-            .timeline-item { flex-direction: column !important; }
-            .timeline-content { width: calc(100% - 60px); margin-left: 60px; }
-            .timeline-dot { left: 20px; }
-            nav ul { gap: 1rem; }
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Animated Background -->
     <div class="animated-bg"></div>
@@ -500,7 +554,7 @@
         </ul>
     </nav>
 
-       <!-- Story Timeline -->
+    <!-- Story Timeline -->
     <section id="story">
         <div class="container">
             <h2>A Candidate's Journey to Success</h2>
@@ -508,35 +562,40 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3 style="color: var(--color-accent-orange);">😞 The Struggle</h3>
-                        <p>Applied to 100+ jobs with zero responses. Not sure why applications keep getting rejected. Feeling demotivated and lost.</p>
+                        <p>Applied to 100+ jobs with zero responses. Not sure why applications keep getting rejected.
+                            Feeling demotivated and lost.</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3 style="color: var(--color-accent-blue);">🚀 Week 1: The Beginning</h3>
-                        <p>Got in touch with LaunchPath! Journey starts here. Mastered creating ATS-friendly CV with AI tools. Learned LinkedIn profile optimization techniques.</p>
+                        <p>Got in touch with LaunchPath! Journey starts here. Mastered creating ATS-friendly CV with AI
+                            tools. Learned LinkedIn profile optimization techniques.</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3 style="color: var(--color-accent-pink);">💡 Week 2: Expert Guidance</h3>
-                        <p>Consulted with career experts to sharpen career goals. Refined job search strategy and identified target companies.</p>
+                        <p>Consulted with career experts to sharpen career goals. Refined job search strategy and
+                            identified target companies.</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3 style="color: var(--color-accent-green);">📞 Week 3-5: Breakthrough!</h3>
-                        <p>Applied new strategies consistently. Got the first interview call! Confidence restored. Multiple opportunities opening up.</p>
+                        <p>Applied new strategies consistently. Got the first interview call! Confidence restored.
+                            Multiple opportunities opening up.</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3 style="color: var(--color-accent-purple);">🏆 Success: Dream Job Landed!</h3>
-                        <p>Secured dream role at top company! From 100+ rejections to multiple offers. Transformed career trajectory completely.</p>
+                        <p>Secured dream role at top company! From 100+ rejections to multiple offers. Transformed
+                            career trajectory completely.</p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
@@ -544,35 +603,35 @@
         </div>
     </section>
 
-   
+
     <!-- Stats Section -->
     <section>
-    <div class="container">
-        <h2>The Problem We Solve</h2>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number" style="font-size: 28px;">ATS Ready</div>
-                <div class="stat-label">Master how to create your own ATS-friendly resume</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" style="font-size: 28px;">LinkedIn Branding</div>
-                <div class="stat-label">Build a strong personal brand that stands out</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" style="font-size: 28px;">Recruiter Attraction</div>
-                <div class="stat-label">Optimize your LinkedIn profile to attract recruiters</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" style="font-size: 28px;">Interview Calls</div>
-                <div class="stat-label">Help job seekers secure more interview opportunities</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" style="font-size: 28px;">Interview Prep</div>
-                <div class="stat-label">Get prepared and confidently crack interviews</div>
+        <div class="container">
+            <h2>The Problem We Solve</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" style="font-size: 28px;">ATS Ready</div>
+                    <div class="stat-label">Master how to create your own ATS-friendly resume</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="font-size: 28px;">LinkedIn Branding</div>
+                    <div class="stat-label">Build a strong personal brand that stands out</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="font-size: 28px;">Recruiter Attraction</div>
+                    <div class="stat-label">Optimize your LinkedIn profile to attract recruiters</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="font-size: 28px;">Interview Calls</div>
+                    <div class="stat-label">Help job seekers secure more interview opportunities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="font-size: 28px;">Interview Prep</div>
+                    <div class="stat-label">Get prepared and confidently crack interviews</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Services Section -->
@@ -612,9 +671,11 @@
                 </div>
             </div>
 
-            <div style="margin-top: 3rem; background: var(--color-bg-card); padding: 2rem; border-radius: 15px; border-left: 4px solid var(--color-accent-orange);">
+            <div
+                style="margin-top: 3rem; background: var(--color-bg-card); padding: 2rem; border-radius: 15px; border-left: 4px solid var(--color-accent-orange);">
                 <h3 style="color: var(--color-accent-orange); margin-bottom: 1rem;">Other Assistance</h3>
-                <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">The following services are available separately:</p>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">The following services are available
+                    separately:</p>
                 <ul style="color: var(--color-text-secondary); list-style: none; padding-left: 0;">
                     <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;">
                         <span style="position: absolute; left: 0;">•</span>
@@ -644,23 +705,34 @@
             <div style="text-align: center; font-size: 2rem; margin: 2rem 0;">
                 🇮🇳 India • 🇬🇧 UK • 🇺🇸 USA • 🇨🇦 Canada • 🇦🇺 Australia
             </div>
-            <p style="text-align: center; font-size: 1.2rem; color: var(--color-text-secondary); margin-top: 2rem;">Apply globally • Works everywhere • Proven techniques 🚀</p>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--color-text-secondary); margin-top: 2rem;">
+                Apply globally • Works everywhere • Proven techniques 🚀</p>
         </div>
     </section>
 
-     <!-- About Section -->
+    <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2>About Us</h2>
             <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/22c8a25d-7901-4aaa-a09b-b95bebacfbb3" alt="Profile" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);">
-                    <h3>Shubh. A</h3>
-                    <div style="margin-bottom: 1rem;">
-                        <a href="https://www.linkedin.com/in/shubhamaher/" target="_blank" style="color: #3b82f6; text-decoration: underline;">LinkedIn Profile</a>
-                    </div>
-                    <p>Currently based in London, I work with a Spanish multinational, bringing over 5 years of technology experience. After completing my Bachelor's in Computer Engineering in India (2019), I joined the corporate world as a software engineer with a 12 LPA package.</p>
-                    <p style="margin-top: 1rem;">The COVID years were tough 12+ hour workdays burned me out and made me rethink my goals. In 2022, I made a bold move to the UK for my Master's, leaving my stable job behind.</p>
-                    <p style="margin-top: 1rem;">While juggling university, part-time jobs at McDonald's and Starbucks, and a relentless job hunt, I faced many sleepless nights without results. Watching others land roles, I became determined to uncover what successful job seekers were doing differently—and transformed my strategy.</p>
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/22c8a25d-7901-4aaa-a09b-b95bebacfbb3"
+                    alt="Profile"
+                    style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);">
+                <h3>Shubh. A</h3>
+                <div style="margin-bottom: 1rem;">
+                    <a href="https://www.linkedin.com/in/shubhamaher/" target="_blank"
+                        style="color: #3b82f6; text-decoration: underline;">LinkedIn Profile</a>
+                </div>
+                <p>Currently based in London, I work with a Spanish multinational, bringing over 5 years of technology
+                    experience. After completing my Bachelor's in Computer Engineering in India (2019), I joined the
+                    corporate world as a software engineer with a 12 LPA package.</p>
+                <p style="margin-top: 1rem;">The COVID years were tough 12+ hour workdays burned me out and made me
+                    rethink my goals. In 2022, I made a bold move to the UK for my Master's, leaving my stable job
+                    behind.</p>
+                <p style="margin-top: 1rem;">While juggling university, part-time jobs at McDonald's and Starbucks, and
+                    a relentless job hunt, I faced many sleepless nights without results. Watching others land roles, I
+                    became determined to uncover what successful job seekers were doing differently-and transformed my
+                    strategy.</p>
             </div>
             <div class="cards-grid">
                 <div class="card icon-card">
@@ -682,16 +754,19 @@
         <div class="container">
             <h2>Success Stories</h2>
             <div class="testimonial">
-                "After applying your strategy, I got interview calls from Amazon within two weeks! The ATS-friendly CV approach really works!"
-                <div class="testimonial-author">— Real Client</div>
+                "After applying your strategy, I got interview calls from Amazon within two weeks! The ATS-friendly CV
+                approach really works!"
+                <div class="testimonial-author">- Real Client</div>
             </div>
             <div class="testimonial">
-                "The LinkedIn optimization was game-changing. Recruiters started reaching out to me instead of the other way around!"
-                <div class="testimonial-author">— Success Story</div>
+                "The LinkedIn optimization was game-changing. Recruiters started reaching out to me instead of the other
+                way around!"
+                <div class="testimonial-author">- Success Story</div>
             </div>
             <div class="testimonial">
-                "From 100+ rejections to 3 interview offers in one month. This coaching transformed my job search completely."
-                <div class="testimonial-author">— Happy Client</div>
+                "From 100+ rejections to 3 interview offers in one month. This coaching transformed my job search
+                completely."
+                <div class="testimonial-author">- Happy Client</div>
             </div>
         </div>
     </section>
@@ -716,12 +791,15 @@
                     </div>
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
-                <div id="form-message" style="margin-top: 1rem; text-align: center; color: var(--color-accent-green); display: none;"></div>
+                <div id="form-message"
+                    style="margin-top: 1rem; text-align: center; color: var(--color-accent-green); display: none;">
+                </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="color: var(--color-text-secondary);">Or connect directly:</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/yourlaunchpath?igsh=MWd6YXB3dzc5d2t0dA%3D%3D&utm_source=qr" title="Instagram">📱</a>
+                    <a href="https://www.instagram.com/yourlaunchpath?igsh=MWd6YXB3dzc5d2t0dA%3D%3D&utm_source=qr"
+                        title="Instagram">📱</a>
                     <a href="https://www.linkedin.com/company/your-launch-path" title="LinkedIn">💼</a>
                     <a href="yourlaunchpath@gmail.com" title="Email">✉️</a>
                 </div>
@@ -732,7 +810,8 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Journey to Success - Job Market Coaching. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">Helping job seekers worldwide land their dream roles 🚀</p>
+        <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">Helping job seekers worldwide land their
+            dream roles 🚀</p>
     </footer>
 
     <script>
@@ -741,13 +820,13 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            
+
             const formMessage = document.getElementById('form-message');
             formMessage.style.display = 'block';
             formMessage.textContent = `Thank you, ${name}! I'll get back to you at ${email} soon. 🎉`;
-            
+
             event.target.reset();
-            
+
             setTimeout(() => {
                 formMessage.style.display = 'none';
             }, 5000);
@@ -768,4 +847,5 @@
         });
     </script>
 </body>
+
 </html>
