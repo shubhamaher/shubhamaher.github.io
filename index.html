@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey to Success - Job Market Coaching</title>
+    <style>
+        :root {
+            --color-bg-primary: #0a0e27;
+            --color-bg-secondary: #1a1f35;
+            --color-bg-card: #2d3748;
+            --color-text-primary: #f0f9ff;
+            --color-text-secondary: #e0e7ff;
+            --color-accent-purple: #8b5cf6;
+            --color-accent-pink: #ec4899;
+            --color-accent-blue: #60a5fa;
+            --color-accent-green: #10b981;
+            --color-accent-orange: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            opacity: 0.1;
+        }
+
+        .floating-shapes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: rgba(139, 92, 246, 0.3);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            background: rgba(236, 72, 153, 0.3);
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: rgba(16, 185, 129, 0.3);
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-30px) translateX(30px); }
+            50% { transform: translateY(-60px) translateX(-20px); }
+            75% { transform: translateY(-30px) translateX(-30px); }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mascot-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent-orange);
+            color: var(--color-bg-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+            background: #fbbf24;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(26, 31, 53, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: var(--color-accent-pink);
+            background: rgba(236, 72, 153, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--color-bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent-purple), var(--color-accent-pink));
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent-blue);
+        }
+
+        .card p, .card ul {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent-green);
+            font-weight: bold;
+        }
+
+        /* Icon Card */
+        .icon-card {
+            text-align: center;
+        }
+
+        .icon-card .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--color-accent-purple), var(--color-accent-pink));
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: var(--color-bg-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--color-accent-pink);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px var(--color-bg-primary);
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--color-accent-purple);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--color-accent-blue);
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: var(--color-bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-accent-green), var(--color-accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--color-text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: var(--color-bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--color-bg-secondary);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            color: var(--color-text-primary);
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent-purple);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-pink));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-bg-secondary);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 2px solid var(--color-accent-purple);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--color-text-primary);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--color-accent-pink);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .subtitle { font-size: 1.2rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item { flex-direction: column !important; }
+            .timeline-content { width: calc(100% - 60px); margin-left: 60px; }
+            .timeline-dot { left: 20px; }
+            nav ul { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>🚀 Journey to Success</h1>
+        <p class="subtitle">Unlock the secrets to landing interviews at top companies</p>
+        <a href="#contact" class="cta-button">Start Your Journey</a>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+       <!-- Story Timeline -->
+    <section id="story">
+        <div class="container">
+            <h2>A Candidate's Journey to Success</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--color-accent-orange);">😞 The Struggle</h3>
+                        <p>Applied to 100+ jobs with zero responses. Not sure why applications keep getting rejected. Feeling demotivated and lost.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--color-accent-blue);">🚀 Week 1: The Beginning</h3>
+                        <p>Got in touch with LaunchPath! Journey starts here. Mastered creating ATS-friendly CV with AI tools. Learned LinkedIn profile optimization techniques.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--color-accent-pink);">💡 Week 2: Expert Guidance</h3>
+                        <p>Consulted with career experts to sharpen career goals. Refined job search strategy and identified target companies.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--color-accent-green);">📞 Week 3-5: Breakthrough!</h3>
+                        <p>Applied new strategies consistently. Got the first interview call! Confidence restored. Multiple opportunities opening up.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 style="color: var(--color-accent-purple);">🏆 Success: Dream Job Landed!</h3>
+                        <p>Secured dream role at top company! From 100+ rejections to multiple offers. Transformed career trajectory completely.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Stats Section -->
+    <section>
+    <div class="container">
+        <h2>The Problem We Solve</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 28px;">ATS Ready</div>
+                <div class="stat-label">Master how to create your own ATS-friendly resume</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 28px;">LinkedIn Branding</div>
+                <div class="stat-label">Build a strong personal brand that stands out</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 28px;">Recruiter Attraction</div>
+                <div class="stat-label">Optimize your LinkedIn profile to attract recruiters</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 28px;">Interview Calls</div>
+                <div class="stat-label">Help job seekers secure more interview opportunities</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" style="font-size: 28px;">Interview Prep</div>
+                <div class="stat-label">Get prepared and confidently crack interviews</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>How We Will Assist You</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>01. LinkedIn Mastery</h3>
+                    <ul>
+                        <li>Zero-to-hero profile optimization</li>
+                        <li>Recruiter attraction strategies</li>
+                        <li>Premium features & tools</li>
+                        <li>5-Second Rule: Banner, Photo, About section</li>
+                        <li>Stand out to hiring managers</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>02. ATS-Friendly CVs</h3>
+                    <ul>
+                        <li>Proven tools & strategies</li>
+                        <li>AI-powered CV optimization</li>
+                        <li>Maximum match rates (85-99%)</li>
+                        <li>Beat automated screening systems</li>
+                        <li>Professional templates & examples</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>03. Networking Opportunity</h3>
+                    <ul>
+                        <li>Updated list of companies with Job Sponsorship License</li>
+                        <li>Network with professionals in your field</li>
+                        <li>Access to exclusive job opportunities</li>
+                        <li>Industry insights and connections</li>
+                        <li>Community support throughout your journey</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; background: var(--color-bg-card); padding: 2rem; border-radius: 15px; border-left: 4px solid var(--color-accent-orange);">
+                <h3 style="color: var(--color-accent-orange); margin-bottom: 1rem;">Other Assistance</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">The following services are available separately:</p>
+                <ul style="color: var(--color-text-secondary); list-style: none; padding-left: 0;">
+                    <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;">
+                        <span style="position: absolute; left: 0;">•</span>
+                        Career Counseling
+                    </li>
+                    <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;">
+                        <span style="position: absolute; left: 0;">•</span>
+                        Interview Preparation
+                    </li>
+                    <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;">
+                        <span style="position: absolute; left: 0;">•</span>
+                        How to negotiate offer
+                    </li>
+                    <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;">
+                        <span style="position: absolute; left: 0;">•</span>
+                        LinkedIn Premium for 1 year in minimum cost
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results">
+        <div class="container">
+            <h2>🌍 Works Everywhere!</h2>
+            <div style="text-align: center; font-size: 2rem; margin: 2rem 0;">
+                🇮🇳 India • 🇬🇧 UK • 🇺🇸 USA • 🇨🇦 Canada • 🇦🇺 Australia
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--color-text-secondary); margin-top: 2rem;">Apply globally • Works everywhere • Proven techniques 🚀</p>
+        </div>
+    </section>
+
+     <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/22c8a25d-7901-4aaa-a09b-b95bebacfbb3" alt="Profile" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);">
+                    <h3>Shubh. A</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <a href="https://www.linkedin.com/in/shubhamaher/" target="_blank" style="color: #3b82f6; text-decoration: underline;">LinkedIn Profile</a>
+                    </div>
+                    <p>Currently based in London, I work with a Spanish multinational, bringing over 5 years of technology experience. After completing my Bachelor's in Computer Engineering in India (2019), I joined the corporate world as a software engineer with a 12 LPA package.</p>
+                    <p style="margin-top: 1rem;">The COVID years were tough 12+ hour workdays burned me out and made me rethink my goals. In 2022, I made a bold move to the UK for my Master's, leaving my stable job behind.</p>
+                    <p style="margin-top: 1rem;">While juggling university, part-time jobs at McDonald's and Starbucks, and a relentless job hunt, I faced many sleepless nights without results. Watching others land roles, I became determined to uncover what successful job seekers were doing differently—and transformed my strategy.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card icon-card">
+                    <div class="emoji">🎯</div>
+                    <h3>Our Approach</h3>
+                    <p>Proven strategies that beat ATS systems and attract recruiters</p>
+                </div>
+                <div class="card icon-card">
+                    <div class="emoji">🌍</div>
+                    <h3>Global Reach</h3>
+                    <p>Successfully helped clients across UK, USA, Canada, India & Australia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="testimonial">
+                "After applying your strategy, I got interview calls from Amazon within two weeks! The ATS-friendly CV approach really works!"
+                <div class="testimonial-author">— Real Client</div>
+            </div>
+            <div class="testimonial">
+                "The LinkedIn optimization was game-changing. Recruiters started reaching out to me instead of the other way around!"
+                <div class="testimonial-author">— Success Story</div>
+            </div>
+            <div class="testimonial">
+                "From 100+ rejections to 3 interview offers in one month. This coaching transformed my job search completely."
+                <div class="testimonial-author">— Happy Client</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get Started Today</h2>
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can I help you?</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+                <div id="form-message" style="margin-top: 1rem; text-align: center; color: var(--color-accent-green); display: none;"></div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--color-text-secondary);">Or connect directly:</p>
+                <div class="social-links">
+                    <a href="#" title="WhatsApp">📱</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                    <a href="#" title="Email">✉️</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Journey to Success - Job Market Coaching. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">Helping job seekers worldwide land their dream roles 🚀</p>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const formMessage = document.getElementById('form-message');
+            formMessage.style.display = 'block';
+            formMessage.textContent = `Thank you, ${name}! I'll get back to you at ${email} soon. 🎉`;
+            
+            event.target.reset();
+            
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
